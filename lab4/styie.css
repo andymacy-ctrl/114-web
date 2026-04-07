@@ -1,90 +1,102 @@
-/* 全域設定：使用舒服的字體與背景色 */
+/* 1. 基礎設定：打造舒服的閱讀環境 */
 body {
-    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-    background-color: #f8fbff; /* 極淺的藍灰色背景 */
-    color: #334155; /* 深灰藍色字體，比純黑更柔和 */
-    line-height: 1.6;
+    font-family: "PingFang TC", "Microsoft JhengHei", "Segoe UI", sans-serif;
+    background-color: #f0f4f8; /* 極淺的藍灰色背景，比純白更溫柔 */
+    color: #4a5568; /* 深灰藍色，增加閱讀舒適度 */
+    line-height: 1.8;
     margin: 0;
-    padding: 40px 20px;
+    padding: 50px 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* 讓內容置中 */
 }
 
-/* 主標題樣式 */
+/* 2. 標題設計 */
 h1 {
-    color: #475569;
-    border-bottom: 3px solid #cbd5e1;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+    color: #2d3748;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
 }
 
-/* 區塊標題樣式 */
 h2 {
-    color: #64748b;
-    font-size: 1.2rem;
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
+    color: #4a5568;
+    font-size: 1.25rem;
+    border-left: 5px solid #a0aec0; /* 左側點綴條 */
+    padding-left: 12px;
+    align-self: flex-start;
+    max-width: 600px;
+    margin: 30px auto 15px auto;
 }
 
-h2::before {
-    content: "●";
-    color: #94a3b8;
-    margin-right: 8px;
-    font-size: 0.8rem;
-}
-
-/* 清單樣式 (興趣與任務) */
-ul, ol {
-    background: white;
-    padding: 20px 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+/* 3. 卡片式佈局 (清單與表格通用) */
+ul, ol, table {
+    background-color: #ffffff;
+    border-radius: 16px; /* 大圓角 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* 輕微的浮動陰影 */
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+/* 4. 清單調整 */
+ul, ol {
+    padding: 25px 50px;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-/* 表格樣式 (課表) */
+/* 5. 表格優化 (課表) */
 table {
-    width: 100%;
-    max-width: 600px;
-    border-collapse: separate; /* 為了讓圓角生效 */
+    border-collapse: separate;
     border-spacing: 0;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden; /* 確保內容不會超出圓角 */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    overflow: hidden; /* 確保內容不會蓋過圓角 */
 }
 
-/* 表頭樣式 */
 th {
-    background-color: #e2e8f0;
-    color: #475569;
+    background-color: #edf2f7;
+    color: #4a5568;
     font-weight: 600;
-    padding: 12px;
-    border-bottom: 2px solid #cbd5e1;
+    padding: 15px;
+    border-bottom: 2px solid #e2e8f0;
 }
 
-/* 儲存格樣式 */
 td {
     padding: 12px;
     text-align: center;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f7fafc;
 }
 
-/* 滑鼠滑過表格行時的高亮效果 */
-tr:hover td {
-    background-color: #f1f5f9;
-    transition: background 0.3s ease;
-}
-
-/* 最後一行不需要底線 */
+/* 讓表格最後一行沒有底線，比較美觀 */
 tr:last-child td {
     border-bottom: none;
+}
+
+/* 滑鼠滑過表格時的微妙變化 */
+tr:hover td {
+    background-color: #fdfdfd;
+    color: #2b6cb0; /* 變藍色點綴 */
+    transition: 0.3s;
+}
+
+/* 6. 回首頁按鈕樣式 */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #718096;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 8px 20px;
+    border: 1px solid #cbd5e0;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+a:hover {
+    background-color: #718096;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
